@@ -14,7 +14,6 @@ public class T {
         Frame f=new Frame();
         //设置窗口的大小
         f.setSize(800,600);
-
         //设置窗口不可更改窗口
         f.setResizable(false);
         //设置标题栏
@@ -30,8 +29,6 @@ public class T {
                 System.exit(0);//系统退出
             }
         });
-
-
     }
 
 }
