@@ -1,6 +1,8 @@
 package com.yhm.tank;
 
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -9,6 +11,7 @@ import java.awt.event.WindowEvent;
  * Descreption:
  */
 public class TankFrame extends Frame {
+    //定义坐标值
     int x=200;
     int y=100;
     /**
@@ -31,19 +34,69 @@ public class TankFrame extends Frame {
                 System.exit(0);//系统退出
             }
         });
+        //  添加键盘监听
+        this.addKeyListener(new MyKeyListner() {
+        });
+
     }
 
+
     /**
-     * 重写paint方法  绘制自己的Tank窗口
+     * 重写paint方法  绘制自己的Tank窗口，系统会自动调用
      * @param g
      */
     @Override
     public void paint(Graphics g){
         System.out.println("paint");
-        //g是只画笔
+        //g是只画笔，可以在窗口中绘制图像
         //绘制一个正方形
         g.fillRect(x,y,50,50);
-        x+=10;
-        y+=20;
+//        x+=10;
+//        y+=80;
+        //paint被调用的时候，位置就会改变
+
+    }
+
+    class MyKeyListner extends KeyAdapter{
+        public MyKeyListner() {
+            super();
+        }
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+            super.keyTyped(e);
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            super.keyPressed(e);
+            System.out.println("Key pressed");
+
+            int key=e.getKeyCode();//获得按键
+            switch (key){
+            case KeyEvent.VK_LEFT:
+                 boolean bL=true;
+                 break;
+            case KeyEvent.VK_RIGHT:
+                boolean bR=true;
+                break;
+            case KeyEvent.VK_UP:
+                boolean bU=true;
+                break;
+            case KeyEvent.VK_DOWN:
+                boolean bD=true;
+                break;
+            default:
+                break;
+            }
+
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            super.keyReleased(e);
+            System.out.println("Key released");
+        }
     }
 }
