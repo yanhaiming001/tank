@@ -64,6 +64,12 @@ public class TankFrame extends Frame {
      * 只处理键盘的监听
      */
     class MyKeyListner extends KeyAdapter {
+
+        boolean bL = false;
+        boolean bR = false;
+        boolean bU = false;
+        boolean bD = false;
+
         public MyKeyListner() {
             super();
         }
@@ -81,23 +87,24 @@ public class TankFrame extends Frame {
         @Override
         public void keyPressed(KeyEvent e) {
             super.keyPressed(e);
-            x += 100;//按下任意一个按钮  x新增50
+
 
             System.out.println("Key pressed");
+            //系统自动捕获按下的键
             int key = e.getKeyCode();//获得按键
-
+            // 根据按下的键进行判断
             switch (key) {
                 case KeyEvent.VK_LEFT:
-                    boolean bL = true;
+                    bL = true;
                     break;
                 case KeyEvent.VK_RIGHT:
-                    boolean bR = true;
+                    bR = true;
                     break;
                 case KeyEvent.VK_UP:
-                    boolean bU = true;
+                    bU = true;
                     break;
                 case KeyEvent.VK_DOWN:
-                    boolean bD = true;
+                    bD=true;
                     break;
                 default:
                     break;
@@ -113,6 +120,26 @@ public class TankFrame extends Frame {
         public void keyReleased(KeyEvent e) {
             super.keyReleased(e);
             System.out.println("Key released");
+
+            //系统自动捕获按下的键
+            int key = e.getKeyCode();//获得按键
+            // 根据按下的键进行判断
+            switch (key) {
+                case KeyEvent.VK_LEFT:
+                    bL = false;
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    bR = false;
+                    break;
+                case KeyEvent.VK_UP:
+                    bU = false;
+                    break;
+                case KeyEvent.VK_DOWN:
+                    bD=false;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
