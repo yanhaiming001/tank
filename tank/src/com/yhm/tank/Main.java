@@ -7,12 +7,13 @@ package com.yhm.tank;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         //测试我们编写的类
-        TankFrame tf=new TankFrame();
+        TankFrame tankFrame=new TankFrame();
 
+        //隔一段时间执行下，repaint操作
         while(true){
             Thread.sleep(50);
             System.out.println("窗口重绘制");
-            tf.repaint();
+            tankFrame.repaint();
         }
 
 

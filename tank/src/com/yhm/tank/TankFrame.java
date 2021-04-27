@@ -78,10 +78,13 @@ public class TankFrame extends Frame {
         @Override
         public void keyPressed(KeyEvent e) {
             super.keyPressed(e);
+            x+=100;//按下任意一个按钮  x新增50
+
             System.out.println("Key pressed");
 
             int key=e.getKeyCode();//获得按键
             switch (key){
+
             case KeyEvent.VK_LEFT:
                  boolean bL=true;
                  break;
