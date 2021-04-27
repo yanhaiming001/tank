@@ -57,6 +57,10 @@ public class TankFrame extends Frame {
 
     }
 
+    /**
+     * 键盘监听处理类  内部类  只有这个类自己使用
+     * 只处理键盘的监听
+     */
     class MyKeyListner extends KeyAdapter{
         public MyKeyListner() {
             super();
@@ -67,6 +71,10 @@ public class TankFrame extends Frame {
             super.keyTyped(e);
         }
 
+        /**
+         * 监听按键 按下时调用
+         * @param e
+         */
         @Override
         public void keyPressed(KeyEvent e) {
             super.keyPressed(e);
@@ -92,7 +100,9 @@ public class TankFrame extends Frame {
 
 
         }
-
+        /*
+        * 按键被释放的时候调用
+        * */
         @Override
         public void keyReleased(KeyEvent e) {
             super.keyReleased(e);
