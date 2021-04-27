@@ -11,7 +11,6 @@ public class Main {
 
         while(true){
             Thread.sleep(50);
-
             System.out.println("窗口重绘制");
             tf.repaint();
         }
